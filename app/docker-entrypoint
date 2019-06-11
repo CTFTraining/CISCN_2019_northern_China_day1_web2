@@ -4,4 +4,4 @@ if [[ -f /flag.sh ]]; then
 	source /flag.sh
 fi
 
-python /app/app.py
+su - glzjin -c "python /app/app.py"

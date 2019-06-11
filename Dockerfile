@@ -6,7 +6,8 @@ ENV FLASK_APP=app.py FLASK_ENV=production
 
 COPY app /app
 
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirror.tuna.tsinghua.edu.cn/g' /etc/apk/repositories && \
+RUN adduser -h /app glzjin -D && \
+	sed -i 's/dl-cdn.alpinelinux.org/mirror.tuna.tsinghua.edu.cn/g' /etc/apk/repositories && \
 	apk update && \
 	apk add --no-cache gcc libc-dev libffi-dev libxml2-dev python-dev libxml2-dev g++ libxslt-dev && \
 	mv /app/main.py /app/app.py && \
