@@ -17,7 +17,8 @@ RUN adduser -h /app glzjin -D && \
 	-r /app/requirement.txt && \
 	mv /app/docker-entrypoint /usr/local/bin/docker-entrypoint && \
 	chmod +x /usr/local/bin/docker-entrypoint && \
-	mv /app/flag.sh /
+	mv /app/flag.sh / && \
+	chown -R glzjin:glzjin /app/sshop.db3
 
 EXPOSE 5000
 
